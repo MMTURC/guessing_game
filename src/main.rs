@@ -1,8 +1,13 @@
 use std::io; // allows us to use io lib
 
+use rand::Rng; // makes it so we can use the rand crate
+
 fn main() {
-    // for reference println! is a macro that prints a string to the screen
     println!("Guess the number!");
+
+    let secret_number = rand::thread_rng().gen_range(1..=100); // stores  a random number between 1-100 into the secret_number variable
+
+    println!("The secret number is: {secret_number}");
 
     println!("Please input your guess.");
 
@@ -14,5 +19,3 @@ fn main() {
 
     println!("You guessed: {guess}")
 }
-
-// read_line returns a Result Value
