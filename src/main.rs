@@ -1,3 +1,5 @@
+use std::cmp::Ordering;
+
 use std::io; // allows us to use io lib
 
 use rand::Rng; // makes it so we can use the rand crate
@@ -17,5 +19,11 @@ fn main() {
         .read_line(&mut guess) //  We pass &mut guess as a argument telling .read_line what string to store user input in.
         .expect("Failed to read line"); // error handling in case we do not recieve a string
 
-    println!("You guessed: {guess}")
+    println!("You guessed: {guess}");
+
+    match guess.cmp(&secret_number) {
+        Ordering::Less => println!("Too Small"),
+        Ordering::Greater => println!("Too Big"),
+        Ordering::Equal => println!("You Win!"),
+    }
 }
