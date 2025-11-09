@@ -19,6 +19,7 @@ fn main() {
         .read_line(&mut guess) //  We pass &mut guess as a argument telling .read_line what string to store user input in.
         .expect("Failed to read line"); // error handling in case we do not recieve a string
 
+    let guess: u32 = guess.trim().parse().expect("Please type a number");
     println!("You guessed: {guess}");
 
     match guess.cmp(&secret_number) {
