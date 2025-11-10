@@ -18,6 +18,7 @@ fn main() {
             .read_line(&mut guess) //  We pass &mut guess as a argument telling .read_line what string to store user input in.
             .expect("Failed to read line"); // error handling in case we do not recieve a string
 
+        // Here we ignore guessing a non number rather than crashing the program.
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
