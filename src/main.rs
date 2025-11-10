@@ -36,3 +36,6 @@ fn main() {
         }
     }
 }
+
+// Overall we learned about let, match, and different functions along with using external crates like rand.
+// Still need to read up a little on match and the whole arms thing but it makes sense
