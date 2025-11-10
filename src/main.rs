@@ -20,8 +20,9 @@ fn main() {
 
         // Here we ignore guessing a non number rather than crashing the program.
         let guess: u32 = match guess.trim().parse() {
-            Ok(num) => num,
-            Err(_) => continue,
+            Ok(num) => num, // if .parse is able to turn our string into a number then it will return ok
+
+            Err(_) => continue, // if .parse fails we use the _ as a catch all value to match all Err values so it will just execute continue
         };
         println!("You guessed: {guess}");
 
