@@ -7,6 +7,12 @@ use rand::Rng; // makes it so we can use the rand crate
 fn main() {
     let secret_number = rand::thread_rng().gen_range(1..=100); // stores  a random number between 1-100 into the secret_number variable
 
+    let random = rand::thread_rng().gen_range(1..=1000);
+
+    let mut rando = String::new();
+
+    println!("{}", random);
+
     loop {
         println!("Guess the number!");
 
